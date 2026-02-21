@@ -1,0 +1,62 @@
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1db954 0%, #191414 100%);
+}
+
+.hero {
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 15px 40px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #1db954;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1ed760;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: #1db954;
+  transform: scale(1.05);
+}

@@ -1,0 +1,43 @@
+import './index.css';
+
+:root {
+  --primary-color: #1db954;
+  --primary-light: #1ed760;
+  --background-primary: #121212;
+  --background-secondary: #191414;
+  --background-tertiary: #282828;
+  --background-quaternary: #383838;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-tertiary: #808080;
+  --error-color: #e74c3c;
+  --border-color: #404040;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #282828;
+  }
+
+  .player {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .songs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
