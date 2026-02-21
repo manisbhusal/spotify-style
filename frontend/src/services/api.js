@@ -1,7 +1,17 @@
 import axios from 'axios';
 
+// Determine API URL based on environment
+const getApiUrl = () => {
+  // In production on Vercel, use /api (relative path)
+  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
+    return '/api';
+  }
+  // In development, use full URL
+  return process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+};
+
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: getApiUrl(),
 });
 
 // Add token to headers

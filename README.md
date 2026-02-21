@@ -7,6 +7,8 @@ A full-stack music streaming application with user authentication, song library,
 ```
 ├── backend/              # Node.js Express API
 ├── frontend/             # React application
+├── api/                  # Vercel serverless functions
+├── vercel.json           # Vercel configuration
 └── README.md
 ```
 
@@ -64,7 +66,36 @@ npm start
 The frontend will be available at `http://localhost:3000`
 The backend API will be running at `http://localhost:5000`
 
-**Demo Account:** You can register a new account or use any credentials to test the platform. The database is pre-loaded with 12 popular songs from YouTube Music for demo purposes.
+**Demo Account:** The database is pre-loaded with 12 popular songs from YouTube Music for demo purposes.
+
+## Deployment on Vercel
+
+### Option 1: Separate Deployments (Recommended)
+
+Deploy frontend and backend to different services for best results:
+
+**Frontend on Vercel:**
+1. Connect your GitHub repo to Vercel
+2. Select the `frontend` folder as root
+3. Vercel will auto-build with `npm run build`
+
+**Backend on Railway/Render:**
+1. Deploy the `backend` folder to Railway or Render
+2. Set environment variables on the platform
+3. Update REACT_APP_API_URL in frontend
+
+### Option 2: Monorepo Deployment on Vercel
+
+Deploy both frontend and backend together using `vercel.json`:
+
+1. Push code to GitHub
+2. Connect repo to Vercel
+3. Set environment variables in Vercel dashboard:
+   - DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME
+   - JWT_SECRET
+   - FRONTEND_URL
+
+See [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md) for detailed instructions.
 
 ## API Endpoints
 
@@ -96,6 +127,12 @@ DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=music_streaming
 JWT_SECRET=your_secret_key
+FRONTEND_URL=http://localhost:3000
+```
+
+### Frontend (.env)
+```
+REACT_APP_API_URL=http://localhost:5000/api
 ```
 
 ## Usage

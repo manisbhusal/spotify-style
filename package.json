@@ -1,0 +1,14 @@
+{
+  "name": "music-streaming-app",
+  "version": "1.0.0",
+  "description": "Full-stack music streaming platform",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run start -w frontend\"",
+    "build": "npm run build -w frontend"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
