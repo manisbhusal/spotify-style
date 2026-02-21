@@ -1,27 +1,18 @@
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/build",
+  "env": {
+    "REACT_APP_API_URL": "@react_app_api_url"
+  },
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-builds",
-      "config": {
-        "distDir": "frontend/build"
-      }
+      "source": "/api/:path*",
+      "destination": "/api/index.js"
     },
     {
-      "src": "api/index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/build/index.html",
-      "status": 200
+      "source": "/:path*",
+      "destination": "/index.html"
     }
   ]
 }
