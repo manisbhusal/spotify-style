@@ -50,6 +50,7 @@ cd backend
 npm install
 cp .env.example .env
 npm run migration
+npm run seed
 npm run dev
 ```
 
@@ -62,6 +63,8 @@ npm start
 
 The frontend will be available at `http://localhost:3000`
 The backend API will be running at `http://localhost:5000`
+
+**Demo Account:** You can register a new account or use any credentials to test the platform. The database is pre-loaded with 12 popular songs from YouTube Music for demo purposes.
 
 ## API Endpoints
 

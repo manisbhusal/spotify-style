@@ -31,6 +31,15 @@ Production:
 npm start
 ```
 
+## Demo Data
+
+To populate the database with sample YouTube Music songs for testing:
+```bash
+npm run seed
+```
+
+This will add 12 popular songs with cover artwork, allowing you to test the search, playback, and playlist features immediately.
+
 ## Project Structure
 
 ```
